@@ -1,0 +1,16 @@
+# https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowPublicRead",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::{bucket_name}/{object_name/*/*.html}"
+        }
+    ]
+}
